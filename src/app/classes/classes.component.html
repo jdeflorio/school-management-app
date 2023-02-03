@@ -1,0 +1,85 @@
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h2 class="text-light primary py-3">School Management System</h2>
+    <div class="d-flex">
+      <button class="btn btn-success" (click)="add()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Class</button>
+      <button routerLink="/login" class="btn btn-warning">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Class ID</th>
+      <th scope="col">Teacher</th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Grade</th>
+      <th scope="col"># Students</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of allClassData">
+      <td>{{data.id}}</td>
+      <td>{{data.teacher}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.location}}</td>
+      <td>{{data.grade}}</td>
+      <td>{{data.students.length}}</td>
+      <td>
+        <button routerLink="/student/{{data.id}}" class="btn btn-info">Student List</button>
+        <button class="btn btn-info" (click)="editClass(data)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+        <button class="btn btn-danger" (click)="deleteClass(data)" >Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Class</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Teacher</label>
+            <input type="name" formControlName="teacher" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Teacher">
+            <small *ngIf="formValue.get('teacher')?.invalid && formValue.get('teacher')?.touched" class="text-danger">Teacher is Required</small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="name" formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+            <small *ngIf="formValue.get('name')?.invalid && formValue.get('name')?.touched" class="text-danger">Name is Required</small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Location</label>
+            <input type="name" formControlName="location" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Location">
+            <small *ngIf="formValue.get('location')?.invalid && formValue.get('location')?.touched" class="text-danger">Location is Required</small>
+
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Grade</label>
+            <input type="number" formControlName="grade" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Grade">
+            <small *ngIf="formValue.get('grade')?.invalid && formValue.get('grade')?.touched" class="text-danger">Grade is Required</small>
+          </div>
+    
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button *ngIf="showAdd" type="button" (click)="addClass()" [disabled]="formValue.invalid" class="btn btn-primary">Add</button>
+        <button *ngIf="showUpdate" type="button" (click)="updateClass()" [disabled]="formValue.invalid" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

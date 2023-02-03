@@ -1,0 +1,85 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Math",
+      "location": "Room 321",
+      "grade": 4,
+      "teacher": "Mr. Brown",
+      "students": [
+        {
+          "id": 678,
+          "name": "Nick Brown",
+          "email": "nbrown@school.org",
+          "mobile": 6358794125,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "English",
+      "location": "Room 123",
+      "grade": 5,
+      "teacher": "Mrs. Clark",
+      "students": []
+    },
+    {
+      "id": 3,
+      "name": "History",
+      "location": "Room 67",
+      "grade": 3,
+      "teacher": "Mr. Z",
+      "students": [
+        {
+          "id": 409,
+          "name": "Mary Williams",
+          "email": "mwilliams@school.org",
+          "mobile": 789543232,
+          "city": "New York"
+        },
+        {
+          "id": 35,
+          "name": "Dave Lucas",
+          "email": "dlucas@school.org",
+          "mobile": 5689621204,
+          "city": "New York"
+        },
+        {
+          "id": 748,
+          "name": "Matt Smith",
+          "email": "msmith@school.org",
+          "mobile": 7852410236,
+          "city": "New York"
+        },
+        {
+          "id": 12,
+          "name": "John Doe",
+          "email": "jdoe@school.org",
+          "mobile": 5489652140,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Music",
+      "location": "Room 1",
+      "grade": 3,
+      "teacher": "Mr. Smith",
+      "students": []
+    }
+  ],
+  "signup": [
+    {
+      "name": "Joe DeFlorio",
+      "email": "jdeflor@school.org",
+      "password": "12345",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
