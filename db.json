@@ -70,14 +70,7 @@
       "students": []
     }
   ],
-  "signup": [
-    {
-      "name": "Joe DeFlorio",
-      "email": "jdeflor@school.org",
-      "password": "12345",
-      "id": 4
-    }
-  ],
+  "signup": [],
   "comments": [],
   "profile": {
     "name": "typicode"
